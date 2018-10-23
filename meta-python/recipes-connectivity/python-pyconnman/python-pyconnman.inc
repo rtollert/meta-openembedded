@@ -9,4 +9,6 @@ SRC_URI[sha256sum] = "46c64c0692063fd0c9fb0216d49f7884bec9fa9760d8473db4b1e2f816
 
 inherit pypi
 
+SRC_URI += "file://import-relative-paths-for-python3-support.patch"
+
 RDEPENDS_${PN} = "connman"
