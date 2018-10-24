@@ -9,3 +9,7 @@ SRC_URI[md5sum] = "c0bf0c7eeaedb785e9fa3018158f018f"
 SRC_URI[sha256sum] = "2b22e4ad0eb541de808d59c9d804dad0f7d07e0719ff6d701f02ea296aa0b7cc"
 
 inherit pypi
+
+FILESEXTRAPATHS_prepend := "${THISDIR}/python-pyiface:"
+
+SRC_URI += "file://interface-name-decode-string-to-utf8.patch"
