@@ -10,6 +10,7 @@ inherit autotools pkgconfig native
 
 SRC_URI = "${APACHE_MIRROR}/httpd/httpd-${PV}.tar.bz2 \
            file://0001-configure-use-pkg-config-for-PCRE-detection.patch \
+           file://0002-use-CRYPTO_set_id_callback.patch \
           "
 
 S = "${WORKDIR}/httpd-${PV}"

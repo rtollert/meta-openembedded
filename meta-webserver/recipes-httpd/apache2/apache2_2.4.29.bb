@@ -16,6 +16,7 @@ SRC_URI = "${APACHE_MIRROR}/httpd/httpd-${PV}.tar.bz2 \
            file://apache-ssl-ltmain-rpath.patch \
            file://httpd-2.4.3-fix-race-issue-of-dir-install.patch \
            file://0001-configure-use-pkg-config-for-PCRE-detection.patch \
+           file://0002-use-CRYPTO_set_id_callback.patch \
            file://configure-allow-to-disable-selinux-support.patch \
            file://init \
            file://apache2-volatile.conf \
