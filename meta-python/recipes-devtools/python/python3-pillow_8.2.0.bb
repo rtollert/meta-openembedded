@@ -5,11 +5,12 @@ HOMEPAGE = "https://pillow.readthedocs.io"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=0337b116233da4616ae9fdb130bf6f1a"
 
-SRC_URI = "git://github.com/python-pillow/Pillow.git;branch=8.2.x \
+SRC_URI = "git://github.com/python-pillow/Pillow.git;branch=8.2.x;protocol=https \
            file://0001-support-cross-compiling.patch \
            file://0001-explicitly-set-compile-options.patch \
            file://0001-Limit-sprintf-modes-to-10-characters.patch \
            file://0001-Use-snprintf-instead-of-sprintf.patch \
+           file://0001-Raise-ValueError-if-color-specifier-is-too-long.patch \
 "
 SRCREV ?= "e0e353c0ef7516979a9aedce3792596649ce4433"
 

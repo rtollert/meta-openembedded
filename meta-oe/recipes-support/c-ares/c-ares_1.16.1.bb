@@ -8,9 +8,11 @@ LIC_FILES_CHKSUM = "file://LICENSE.md;md5=fb997454c8d62aa6a47f07a8cd48b006"
 PV = "1.16.0+gitr${SRCPV}"
 
 SRC_URI = "\
-    git://github.com/c-ares/c-ares.git \
+    git://github.com/c-ares/c-ares.git;branch=main;protocol=https \
     file://cmake-install-libcares.pc.patch \
     file://0001-fix-configure-error-mv-libcares.pc.cmakein-to-libcar.patch \
+    file://0001-CVE-2021-3672.patch \
+    file://0002-CVE-2021-3672.patch \
 "
 SRCREV = "74a1426ba60e2cd7977e53a22ef839c87415066e"
 

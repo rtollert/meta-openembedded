@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://COPYING.txt;md5=7c13b3376cea0ce68d2d2da0a1b3a72c"
 SRCREV = "565bf68eccfdbbf22cf5cb6d792e23de564665c7"
 PV = "0.21+git${SRCPV}"
 
-SRC_URI = "git://github.com/analogdevicesinc/libiio.git;protocol=https \
+SRC_URI = "git://github.com/analogdevicesinc/libiio.git;protocol=https;branch=master \
            file://0001-python-Do-not-verify-whether-libiio-is-installed-whe.patch \
 "
 UPSTREAM_CHECK_GITTAGREGEX = "v(?P<pver>\d+(\.\d+)+)"
@@ -37,7 +37,10 @@ PACKAGECONFIG[libiio-python3] = "-DPYTHON_BINDINGS=ON,-DPYTHON_BINDINGS=OFF"
 
 PACKAGES =+ "${PN}-iiod ${PN}-tests ${PN}-${PYTHON_PN}"
 
-RDEPENDS_${PN}-${PYTHON_PN} = "${PN} ${PYTHON_PN}-ctypes ${PYTHON_PN}-stringold"
+# Inheriting setuptools3 incorrectly adds the dependency on ${PYTHON_PN}-core
+# to ${PN} instead of to ${PN}-${PYTHON_PN} where it belongs.
+RDEPENDS_${PN}_remove = "${PYTHON_PN}-core"
+RDEPENDS_${PN}-${PYTHON_PN} = "${PN} ${PYTHON_PN}-core ${PYTHON_PN}-ctypes ${PYTHON_PN}-stringold"
 
 FILES_${PN}-iiod = " \
     ${sbindir}/iiod \
