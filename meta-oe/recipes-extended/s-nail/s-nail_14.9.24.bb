@@ -45,5 +45,5 @@ do_install() {
     oe_runmake -C ${S} install DESTDIR=${D}
 }
 
-ALTERNATIVE:${PN} = "mailx"
+ALTERNATIVE_${PN} = "mailx"
 ALTERNATIVE_TARGET[mailx] = "${bindir}/s-nail"
